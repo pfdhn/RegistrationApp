@@ -96,6 +96,8 @@ function Registration(){
                 </div>
 
                 <div className='footer' style={{display: page === 0 || page > 3 ? 'none' : 'block'}}>
+                
+                
                 <button 
                         hidden={page < 2}
                         onClick={() => {
@@ -107,7 +109,6 @@ function Registration(){
 
                     <button
                         onClick={() => {
-                            
                             if (page === 3) {
                                 if (IsValidOtherInfo && IsValidDgroupInfo){
                                     fetch("/attendees", {
@@ -145,8 +146,10 @@ function Registration(){
                                             throwError()
                                         } 
                                     } 
-                                } else{
+                                } else if (attendeeType === "first-timer") {
+                                    console.log("FIRST-TIMER")
                                     if (page === 1){
+                                        console.log(IsValidBasicInfo)
                                         if (IsValidBasicInfo){
                                             setPage((curr) => curr + 1);
                                         } else {
@@ -160,7 +163,9 @@ function Registration(){
                                         }  
 
                                         }
-                                } 
+                                }  else{
+                                    throwError()
+                                }
                             }
                         }}
                     >
