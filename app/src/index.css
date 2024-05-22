@@ -1,0 +1,110 @@
+:root {
+  /* light theme */
+  --background: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #3e3c3c;
+  --accent: #E08A00;
+  --border: #3e3c3ce7;
+  --button: #454444;
+
+
+  /* default */
+  --button-text: var(--background);
+}
+
+[data-theme='dark'] {
+  /* dark theme */
+  --background: #000000;
+  --text-primary: #ffffff00;
+  --text-secondary: #3e3c3c;
+  --accent: #E08A00;
+  --border: #3e3c3ce7;
+  --button: #737070;
+  
+  --button-text: var(--background);
+}
+
+* {
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#page {
+  background-color: var(--background);
+  
+}
+
+/* Important styles to center everything in root*/
+#root {
+  transition: all 0.5s;
+  
+
+  max-width: 1280px;
+  min-width: 400px!important;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background: var(--background);
+  
+
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 450px;
+  min-height: 100vh;
+}
+
+/* ---------------------------*/
+
+h1 {
+  color: var(--text-primary);
+  font-size: 3.6em;
+  line-height: 1.1;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* LOGO */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #bb1212aa);
+}
+
+/* LOGIN */
+.sign-in {
+  color: #514e4e;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.sign-in:hover {
+  text-decoration: underline;
+}
+
+/* LOWER RIGHT TOGGLE */
+.theme-toggle {
+  position: absolute;
+  cursor: pointer;
+  bottom: 10px;
+  right: 20px;
+}
